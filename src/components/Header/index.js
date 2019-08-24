@@ -7,7 +7,9 @@ import cartImg from '../../assets/images/cart1.jpg'
 import slider1 from '../../assets/images/header-slider/slide-1.jpg'
 import slider2 from '../../assets/images/header-slider/slide-2.jpg'
 import slider3 from '../../assets/images/header-slider/slide-3.jpg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Navbar from './Navbar';
+import { text } from '@fortawesome/fontawesome-svg-core';
 
 
 class Header extends React.Component {
@@ -35,7 +37,8 @@ class Header extends React.Component {
                             <div className="cart">
 
                                 <Link to="index">
-                                    <i className="zmdi zmdi-case zmdi-hc-lg"></i><span>4</span>
+                                    <FontAwesomeIcon  icon="shopping-bag" size="2x"/>
+                                    <span className="fa-layers-text fa-inverse" >4</span>
                                 </Link>
                                 <div className="cart-container">
                                     <h6>SHOPPING CART (2)</h6>
@@ -60,10 +63,12 @@ class Header extends React.Component {
                             </div>
 
                             <div className="search">
-                                <Link to="/index" className="search"><i className="zmdi zmdi-search zmdi-hc-lg"></i></Link>
+                                <Link to="/index" className="search"><FontAwesomeIcon icon="search" size="2x"></FontAwesomeIcon></Link>
                                 <div className="search-something">
                                     <input type="search" placeholder="search for something" />
-                                    <Link to="/index" ><i className="zmdi zmdi-search"></i></Link>
+                                    <Link to="/index" >
+                                        <FontAwesomeIcon icon="search" size="1x" />
+                                    </Link>
                                 </div>
                             </div>
 

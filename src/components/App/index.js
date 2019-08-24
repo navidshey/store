@@ -1,8 +1,11 @@
 import React from 'react'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import {withRouter} from 'react-router';
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faShoppingBag, faSearch} from '@fortawesome/free-solid-svg-icons'
 import Home from '../Home';
 
+library.add(faShoppingBag, faSearch)
 
 class App extends React.Component {
   render() {
