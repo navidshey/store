@@ -3,8 +3,10 @@
 $(function() {
 
 	$(".rslides-header").responsiveSlides({
-		prevText: '<i class="zmdi zmdi-chevron-left zmdi-hc-2x text-center"></i>',
-		nextText: '<i class="zmdi zmdi-chevron-right zmdi-hc-2x text-center"></i>',
+		prevText: '<FontAwesomeIcon  icon="chevron-left" size="2x"/>',
+		nextText: '<i class="fas fa-chevron-right fa-2x  text-center"></i>',
+		// prevText: '<i class="fas fa-chevron-left fa-2x  text-center"></i>',
+		// nextText: '<i class="fas fa-chevron-right fa-2x  text-center"></i>',
 		nav: true
 	});
 
@@ -16,8 +18,8 @@ $(function() {
 
 	$(".slick-features").slick({
 		slidesToShow: 5,
-		prevArrow: '<i class="zmdi zmdi-chevron-left zmdi-hc-2x text-center"></i>',
-		nextArrow: '<i class="zmdi zmdi-chevron-right zmdi-hc-2x text-center"></i>',
+		prevArrow: '<FontAwesomeIcon  icon="chevron-left" size="2x"/>',
+		nextArrow: '<FontAwesomeIcon  icon="chevron-right" size="2x"/>',
 		responsive: [
 		{
 			breakpoint: 1200,
@@ -41,8 +43,8 @@ $(function() {
 
 	$(".slick-testimonials").slick({
 		slidesToShow: 1,
-		prevArrow: '<i class="zmdi zmdi-chevron-left text-center"></i>',
-		nextArrow: '<i class="zmdi zmdi-chevron-right text-center"></i>',
+		prevArrow: '<FontAwesomeIcon  icon="chevron-left" size="2x"/>',
+		nextArrow: '<FontAwesomeIcon  icon="chevron-right" size="2x"/>',
 	});
 
 	$(".popular-scrolldown").on("click", function(){
@@ -65,8 +67,8 @@ $(function() {
 
 	$("#teacher-single .tutorials").slick({
 		slidesToShow: 3,
-		prevArrow: '<i class="zmdi zmdi-chevron-left text-center"></i>',
-		nextArrow: '<i class="zmdi zmdi-chevron-right text-center"></i>',
+		prevArrow: '<FontAwesomeIcon  icon="chevron-left" size="2x"/>',
+		nextArrow: '<FontAwesomeIcon  icon="chevron-right" size="2x"/>',
 		responsive: [
    		{
 			breakpoint: 992,
@@ -90,8 +92,8 @@ $(function() {
 
 	$(".courses-side-slick").slick({
 		slidesToShow: 1,
-		prevArrow: '<i class="zmdi zmdi-chevron-left text-center"></i>',
-		nextArrow: '<i class="zmdi zmdi-chevron-right text-center"></i>'
+		prevArrow: '<FontAwesomeIcon  icon="chevron-left" size="2x"/>',
+		nextArrow: '<FontAwesomeIcon  icon="chevron-right" size="2x"/>'
 	});
 
 	$(".loadmore").on("click", function(e){

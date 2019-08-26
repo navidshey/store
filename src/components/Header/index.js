@@ -9,7 +9,6 @@ import slider2 from '../../assets/images/header-slider/slide-2.jpg'
 import slider3 from '../../assets/images/header-slider/slide-3.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Navbar from './Navbar';
-import { text } from '@fortawesome/fontawesome-svg-core';
 
 
 class Header extends React.Component {
@@ -19,7 +18,7 @@ class Header extends React.Component {
 
     render() {
         let langs = [{ link: "index2.html", title: "فا" }, { link: "index1.html", title: "En" }];
-        debugger;
+        // debugger;
         return (
             <>
                 <MultiLang langList={langs} />
@@ -34,7 +33,7 @@ class Header extends React.Component {
                             <Link to="/index" className="blueplay login"> Login</Link>
                             <Link to="/index" className="register">Register</Link>
 
-                            <div className="cart">
+                            <div className="cart">  
 
                                 <Link to="index">
                                     <FontAwesomeIcon  icon="shopping-bag" size="2x"/>
