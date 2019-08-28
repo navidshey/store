@@ -12,7 +12,7 @@ const Navbar = () => {
                 <ul>
 
                     <li className="active">
-                        <Link to="index3.html#">Home</Link>
+                        <Link to="/">Home</Link>
                         <ul className="submenu-list submenu">
                             <li><Link to="index1_2.html">Homepage 1</Link></li>
                             <li><Link to="index2.html">Homepage 2</Link></li>
@@ -80,7 +80,7 @@ const Navbar = () => {
                             <li><Link to="blog2.html">Blog 2</Link></li>
                         </ul>
                     </li>
-                    <li><Link to="contact.html">Contact</Link></li>
+                    <li><Link to="/contact">Contact</Link></li>
 
                 </ul>
             </nav>

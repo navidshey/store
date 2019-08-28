@@ -5,7 +5,6 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { faShoppingBag, faSearch, faChevronRight, faChevronLeft} from '@fortawesome/free-solid-svg-icons'
 import Home from '../Home';
 import Header from '../Header'
-import Navbar from '../Header/na'
 import Footer from '../Footer'
 import Contact from '../Contact'
 
