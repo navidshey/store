@@ -8,6 +8,14 @@ const general = {
     document[elementName].classList.remove(className);
 },
 
+addClassToElementById: (id, className)=>{
+    document.getElementById(id).classList.add(className);
+},
+
+remoteClassToElementById: (id, className)=>{
+    document.getElementById(id).classList.remove(className);
+},
+
 
 }
 

@@ -15,8 +15,10 @@ class Home extends React.Component {
     componentDidMount() {
         general.removeClassFromElement('body', 'page');
         general.addClassToElement('body', 'homepage');
+
         ReactDOM.render(<HeaderText></HeaderText>, document.getElementById('slider-text'));
         ReactDOM.render(<HeaderImage></HeaderImage>, document.getElementById('slider-images'));
+
     }
 
     render() {

@@ -1,11 +1,11 @@
 import React from 'react'
 import MultiLang from './MultiLang'
-import Nabvar from './Navbar'
 import { Link } from 'react-router-dom'
 import logo from '../../assets/images/logo.png'
 import cartImg from '../../assets/images/cart1.jpg'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Navbar from './Navbar';
+
 
 
 class Header extends React.Component {
@@ -16,7 +16,6 @@ class Header extends React.Component {
 
     render() {
         let langs = [{ link: "index2.html", title: "فا" }, { link: "index1.html", title: "En" }];
-        // debugger;
         return (
             <header>
                 <MultiLang langList={langs} />
@@ -79,7 +78,8 @@ class Header extends React.Component {
 
 
 
-                    <div id="slider-text" className="row">
+                    <div id="slider-text">
+                        {/* <HeaderText></HeaderText> */}
                         {/* <div className="col-md-8 col-md-offset-2 text-center">
                             <p className="pretitle">ONLINE VIDEO TRAININGS</p>
                             <h2>PROOF YOUR TALENT</h2>
@@ -89,7 +89,8 @@ class Header extends React.Component {
                     </div>
                 </div>
 
-                <div id="slide-images">
+                <div id="slider-images">
+                    {/* <HeaderImage></HeaderImage> */}
                     {/* <ul className="rslides-header" >
                         <li><img src={slider1} className="resp-img" alt="Slide" /></li>
                         <li><img src={slider2} className="resp-img" alt="Slide" /></li>
