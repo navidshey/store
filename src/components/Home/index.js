@@ -21,6 +21,13 @@ class Home extends React.Component {
 
     }
 
+    componentWillUnmount(){
+        general.removeClassFromElement('body', 'homepage');
+        general.addClassToElement('body', 'page');
+        ReactDOM.unmountComponentAtNode(document.getElementById('slider-text'));
+        ReactDOM.unmountComponentAtNode(document.getElementById('slider-images'));
+    }
+
     render() {
         return (
 

@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import {withRouter} from 'react-router';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faShoppingBag, faSearch, faChevronRight, faChevronLeft} from '@fortawesome/free-solid-svg-icons'
@@ -15,14 +15,12 @@ class App extends React.Component {
     return (
       <div>
         <Header></Header>
-        <Router>
-          <div>
+        <Switch>
+          <Route path="/contact" component={Contact} />
             <Route exact path="/" component={Home} />
-            <Route path="/contact" component={Contact} />
             {/* <Route path="/article/:id" component={Article} />
             <Route path="/login" component={Login} /> */}
-          </div>
-        </Router>
+        </Switch>
         <Footer></Footer>
       </div>
     );
