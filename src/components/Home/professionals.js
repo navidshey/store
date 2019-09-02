@@ -15,14 +15,14 @@ const Professionals =({prosList})=>{
 			</div>
 		</div>
 		<div className="row text-center">
-       { prosList.map( item =>{
+       { prosList.map( (item, index) =>{
             return(
-                <div className="col-md-2 col-sm-4 col-xs-6">	
-				<div className="teacher">
+                <div className="col-md-2 col-sm-4 col-xs-6" key={index} >	
+				<div className="teacher"> 
 					<div className="imgcontainer">
-						<img src={item.avatar} alt="Avatar" />
+						<img src={process.env.PUBLIC_URL + item.avatar} alt="Avatar" />
 						<div className="overlay">
-							<img src={item.profileImg} alt="Profile" />
+							<img src={process.env.PUBLIC_URL + item.profileImg} alt="Profile" />
 							<p>{item.shortDesc}</p>
 						</div>
 					</div>
