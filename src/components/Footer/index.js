@@ -1,4 +1,10 @@
 import React from 'react'
+import logo from '../../assets/images/logo.png'
+import payments1 from '../../assets/images/payments/1.png'
+import payments2 from '../../assets/images/payments/2.png'
+import payments3 from '../../assets/images/payments/3.png'
+import payments4 from '../../assets/images/payments/4.png'
+import payments5 from '../../assets/images/payments/5.png'
 
 const Footer = ()=>{
     return (
@@ -7,7 +13,7 @@ const Footer = ()=>{
 	<div className="container">
 		<div className="row">
 			<div className="col-md-4 col-sm-6 col-xs-12">
-				<h1 className="logo"><a href="index.html"><img src="assets/images/logo.png" alt="Logo"/></a></h1>
+				<h1 className="logo"><a href="index.html"><img src={logo} alt="Logo"/></a></h1>
 				<ul className="contactinfo">
 					<li className="address"><strong>Address:</strong> 127 Sith Avenue, 54571 New York City </li>
 					<li className="phone"><strong>Phone:</strong>  +49 123 456 789</li>
@@ -65,11 +71,11 @@ const Footer = ()=>{
 			</div>
 			<div className="col-sm-5">
 				<ul className="pull-right payments">
-					<li><a href="index3.html#"><img src="assets/images/payments/1.png" alt="Payment"/></a></li>
-					<li><a href="index3.html#"><img src="assets/images/payments/2.png" alt="Payment"/></a></li>
-					<li><a href="index3.html#"><img src="assets/images/payments/3.png" alt="Payment"/></a></li>
-					<li><a href="index3.html#"><img src="assets/images/payments/4.png" alt="Payment"/></a></li>
-					<li><a href="index3.html#"><img src="assets/images/payments/5.png" alt="Payment"/></a></li>
+					<li><a href="index3.html#"><img src={payments1} alt="Payment"/></a></li>
+					<li><a href="index3.html#"><img src={payments2} alt="Payment"/></a></li>
+					<li><a href="index3.html#"><img src={payments3} alt="Payment"/></a></li>
+					<li><a href="index3.html#"><img src={payments4} alt="Payment"/></a></li>
+					<li><a href="index3.html#"><img src={payments5} alt="Payment"/></a></li>
 				</ul>
 			</div>
 		</div>

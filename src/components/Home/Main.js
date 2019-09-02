@@ -1,42 +1,20 @@
 import React from 'react'
+import Features from './Features'
+import Professionals from './professionals'
 
 const Main = ()=>{
+
+	let prosList  = [{ avatar: "../../assets/images/avatars/1.png", profileImg: "../../assets/images/avatars/profile.png", shortDesc: "8 VIDEOS", title:"Kevin Mcfield"  },
+	{ avatar: "../../assets/images/avatars/2.png", profileImg: "../../assets/images/avatars/profile.png", shortDesc: "8 VIDEOS", title:"Kevin Mcfield"  },
+	{ avatar: "../../assets/images/avatars/3.png", profileImg: "../../assets/images/avatars/profile.png", shortDesc: "8 VIDEOS", title:"Kevin Mcfield"  },
+	{ avatar: "../../assets/images/avatars/4.png", profileImg: "../../assets/images/avatars/profile.png", shortDesc: "8 VIDEOS", title:"Kevin Mcfield"  },
+	{ avatar: "../../assets/images/avatars/5.png", profileImg: "../../assets/images/avatars/profile.png", shortDesc: "8 VIDEOS", title:"Kevin Mcfield"  },
+    { avatar: "../../assets/images/avatars/6.png", profileImg: "../../assets/images/avatars/profile.png", shortDesc: "8 VIDEOS", title:"Kevin Mcfield"  },];
     return(
 
 <main>   
 	
-	<div className="container featured text-center">
-		<div className="col-md-4"> 
-			<div className="feature">
-				<div className="img-container-bg">
-					<img src="assets/images/features/feature-2.png" className="make-center" alt="Feature" />
-				</div>
-				<h6>Watch it from everywhere</h6>
-				<p>Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</p>
-				<a href="index3.html#" className="readmore"><span>READ MORE&nbsp;&nbsp;&nbsp;</span><i className="zmdi zmdi-long-arrow-right"></i></a>
-			</div>
-		</div>
-		<div className="col-md-4">
-			<div className="feature">
-				<div className="img-container-bg">
-					<img src="assets/images/features/feature-3.png" className="make-center" alt="Feature" />
-				</div>
-				<h6>Support videos on all devices</h6>
-				<p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat vel illum dolore eu feugiat nulla facilisi.</p>
-				<a href="index3.html#" className="readmore"><span>READ MORE&nbsp;&nbsp;&nbsp;</span><i className="zmdi zmdi-long-arrow-right"></i></a>
-			</div>
-		</div>
-		<div className="col-md-4">
-			<div className="feature">
-				<div className="img-container-bg">
-					<img src="assets/images/features/feature-4.png" className="make-center" alt="Feature" />
-				</div>
-				<h6>Learn new skills daily</h6>
-				<p>Iconsetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
-				<a href="index3.html#" className="readmore"><span>READ MORE&nbsp;&nbsp;&nbsp;</span><i className="zmdi zmdi-long-arrow-right"></i></a>
-			</div>
-		</div>
-	</div>
+	<Features></Features>
 
 	<div className="container index-3-categories text-center">	
 		<div className="row">
@@ -94,98 +72,7 @@ const Main = ()=>{
 		</div>
 	</div>
 
-	<div className="container pros">
-		<div className="row">	
-			<div className="col-sm-10 col-sm-offset-1 text-center">
-				<h3>Check some of our professionals</h3>
-				<p>
-					At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, 
-					no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, coniam voluptua.
-				</p>
-				<a href="index3.html#" className="blueplay">CHECK ALL TEACHERS</a>
-			</div>
-		</div>
-		<div className="row text-center">
-			<div className="col-md-2 col-sm-4 col-xs-6">	
-				<div className="teacher">
-					<div className="imgcontainer">
-						<img src="assets/images/avatars/1.png" alt="Avatar" />
-						<div className="overlay">
-							<img src="assets/images/avatars/profile.png" alt="Profile" />
-							<p>8 VIDEOS</p>
-						</div>
-					</div>
-					<a href="index3.html#">Kevin Mcfield</a>
-					<p>SCIENTIST</p>
-				</div>
-			</div>
-			<div className="col-md-2 col-sm-4 col-xs-6">	
-				<div className="teacher">
-					<div className="imgcontainer">
-						<img src="assets/images/avatars/2.png" alt="Avatar" />
-						<div className="overlay">
-							<img src="assets/images/avatars/profile.png" alt="Profile" />
-							<p>8 VIDEOS</p>
-						</div>
-					</div>
-					<a href="index3.html#">Jonathan Creon</a>
-					<p>DESIGNER</p>
-				</div>
-			</div>
-			<div className="col-md-2 col-sm-4 col-xs-6">	
-				<div className="teacher">
-					<div className="imgcontainer">
-						<img src="assets/images/avatars/3.png" alt="Avatar" />
-						<div className="overlay">
-							<img src="assets/images/avatars/profile.png" alt="Profile" />
-							<p>8 VIDEOS</p>
-						</div>
-					</div>
-					<a href="index3.html#">Peter Griffin</a>
-					<p>LANGUAGE TEACHER</p>
-				</div>
-			</div>
-			<div className="col-md-2 col-sm-4 col-xs-6">	
-				<div className="teacher">
-					<div className="imgcontainer">
-						<img src="assets/images/avatars/4.png" alt="Avatar" />
-						<div className="overlay">
-							<img src="assets/images/avatars/profile.png" alt="Profile" />
-							<p>8 VIDEOS</p>
-						</div>
-					</div>
-					<a href="index3.html#">Vanessa Dilmor</a>
-					<p>MARKETING MANAGER</p>
-				</div>
-			</div>
-			<div className="col-md-2 col-sm-4 col-xs-6">	
-				<div className="teacher">
-					<div className="imgcontainer">
-						<img src="assets/images/avatars/5.png" alt="Avatar" />
-						<div className="overlay">
-							<img src="assets/images/avatars/profile.png" alt="Profile" />
-							<p>8 VIDEOS</p>
-						</div>
-					</div>
-					<a href="index3.html#">Lydia Bennolt</a>
-					<p>DEVELOPER</p>
-				</div>
-			</div>
-			<div className="col-md-2 col-sm-4 col-xs-6">	
-				<div className="teacher">
-					<div className="imgcontainer">
-						<img src="assets/images/avatars/6.png" alt="Avatar" />
-						<div className="overlay">
-							<img src="assets/images/avatars/profile.png" alt="Profile" />
-							<p>8 VIDEOS</p>
-						</div>
-					</div>
-					<a href="index3.html#">Marcus Winter</a>
-					<p>DIGITAL ARTIST</p>
-				</div>
-			</div>
-		</div>
-	</div>
+<Professionals prosList={prosList}></Professionals>
 
 	<div className="container popular">
 		<div className="row">
