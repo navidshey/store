@@ -13,7 +13,7 @@ library.add(faShoppingBag, faSearch, faChevronRight, faChevronLeft)
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <>
         <Header></Header>
         <Switch>
           <Route path="/contact" component={Contact} />
@@ -22,7 +22,7 @@ class App extends React.Component {
             <Route path="/login" component={Login} /> */}
         </Switch>
         <Footer></Footer>
-      </div>
+      </>
     );
   }
 }
