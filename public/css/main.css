@@ -1679,6 +1679,13 @@ h3 + p {
 	transition: all 0.3s ease;
 }
 
+.pagination current{
+	background-color: #18c967;
+    color: #fff;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
 .paginations .next,
 .paginations .prev{
 	width: auto;

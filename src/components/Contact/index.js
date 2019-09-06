@@ -1,5 +1,7 @@
 import React from 'react'
-import Input from '../Elements/Input'
+import {Input, Textarea} from '../Elements/Input'
+import {Header} from '../Page'
+import general from '../../utils/general'
 
 class contact extends React.Component {
     constructor(props) {
@@ -13,6 +15,10 @@ class contact extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
+    }
+
+    componentDidMount() {
+        general.changeIdByElement("body", "contact");
     }
 
     handleSubmit(event) {
@@ -29,6 +35,7 @@ class contact extends React.Component {
     }
 
     handleInputChange(event) {
+        //validation can happen here
         const target = event.target;
         const value = target.value;
         const name = target.name;
@@ -41,38 +48,18 @@ class contact extends React.Component {
     render() {
         return (
             <main>
-                <div className="page-heading text-center">
-                    <div className="container">
-                        <h2>CONTACT</h2>
-                    </div>
-                </div>
+                <Header title="CONTACT"></Header>
                 <div className="container success">
                     <h4>GET IN TOUCH WITH US</h4>
                     <form className="contact" onSubmit={this.handleSubmit}>
                         <div className="row">
-                            <Input name="name" placeholder="enter your name" required="true" type="text" labelClass="req" label="NAME" colNumber="4"></Input>
-                            {/* <div className="col-sm-3">
-                                <label className="req">NAME</label>
-                                <input type="text" name="name" placeholder="enter your name" required />
-                            </div> */}
-                            <div className="col-sm-3">
-                                <label className="req">E-MAIL ADDRESS</label>
-                                <input type="text" name="email" placeholder="enter e-mail address" required />
-                            </div>
-                            <div className="col-sm-3">
-                                <label>WEBSITE</label>
-                                <input type="text" name="site" placeholder="https://" />
-                            </div>
-                            <div className="col-sm-3">
-                                <label>SUBJECT</label>
-                                <input type="text" name="subject" placeholder="subject" />
-                            </div>
+                            <Input handleChange={this.handleInputChange} name="name" placeholder="enter your name" required={true} type="text" labelClass="req" label="NAME" colNumber="4"></Input>
+                            <Input name="email" placeholder="enter e-mail address" required={true} type="text" labelClass="req" label="E-MAIL ADDRESS" colNumber="4"></Input>
+                            <Input name="site" placeholder="https://"  type="text" required={false}  label="WEBSITE" colNumber="4"></Input>
+                            <Input name="subject" placeholder="subject"  type="text" required={false} label="SUBJECT" colNumber="4"></Input>
                         </div>
                         <div className="row">
-                            <div className="col-sm-12">
-                                <label className="req">MESSAGE</label>
-                                <textarea name="message" placeholder="type in a message" required></textarea>
-                            </div>
+                        <Textarea name="message" placeholder="type in a message" required={true} label="MESSAGE" labelClass="req" colNumber="1"></Textarea>
                         </div>
                         <div className="row clearfix">
                             <div className="col-sm-12">

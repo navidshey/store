@@ -1,31 +1,31 @@
 import React from 'react'
 
-const Input = ({ name, placeholder, type, required, labelName, labelClass, colNumber }) => {
+const Textarea = ({ name, placeholder, required, label, labelClass, colNumber, handleChange }) => {
     let parentClass = "";
     switch (colNumber) {
         case "1":
             parentClass = "col-xs-12";
-            return;
+            break;;
         case "2":
             parentClass = "col-xs-6";
-            return;
+            break;
         case "3":
             parentClass = "col-xs-4";
-            return;
+            break;
         case "4":
             parentClass = "col-xs-3";
-            return;
+            break;
         case "6":
             parentClass = "col-xs-2";
-            return;
+            break;
         default:
             parentClass = "col-xs-3";
     }
     return (
-        <div className={this.parentClass}>
-            <label className={labelClass}>{labelName}}</label>
-            <input type={type} name={name} placeholder={placeholder} required = {required} />
+        <div className={parentClass}>
+            <label className={labelClass}>{label}</label>
+            <textarea name={name} placeholder={placeholder} required = {required} onChange={handleChange}/>
         </div>
     )
 }
-export default Input;
+export default Textarea;
