@@ -1,4 +1,5 @@
 import React from 'react'
 import Header from './Header'
+import Pagination from './Pagination'
 
-export {Header}
+export {Header, Pagination}
