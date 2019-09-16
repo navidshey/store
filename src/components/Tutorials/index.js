@@ -11,7 +11,7 @@ const Tutorials = ({ props, columnNumbers = 3 }) => {
             {
                 general.chunk(props, 4).map((items, i)=>{
                     return(
-                        <div className="row tutorials" >
+                        <div className="row tutorials" key={"row-"+i}>
                             {items.map((item, index)=>{
                                 return(
                                 <Box item={item} index={index} colStyle={colStyle}></Box>
