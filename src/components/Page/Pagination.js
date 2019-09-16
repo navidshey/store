@@ -11,8 +11,10 @@ const Pagination = ({ total = 5, url, current }) => {
                         </Link>
                     {
                         [...Array(total)].map((e, i) => {
+                            return(
                             <Link to={url + "/" + i} key={i} className={current == i && "current"}>{i}</Link>
-                        })}
+                        )})
+                        }
                     {/* <a href="courses-3-col.html#">1</a>
                     <a href="courses-3-col.html#">2</a>
                     <a href="courses-3-col.html#">3</a>
