@@ -1,21 +1,22 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { Header } from '../Page'
+import PropTypes from 'prop-types'
+import { Header, Pagination } from '../Page'
 import Search from '../Page/Search';
 import Tutorials from '../Tutorials';
 
+
 class CourseList extends React.Component {
 
-    constructor(props, columnNumbers=4) {
+    constructor(props, columnNumbers) {
         super(props);
         this.state = {
-            columnNumbers: columnNumbers ? columnNumbers :4
+            columnNumbers: columnNumbers ? columnNumbers :3  
         };
     }
 
     render() {
 
-        let tutorialsList = [{imgLink: "../../images/popular/1.jpg", duration:"3:15h", title:"111111111111111111111111111111", shortDesc:"12 LESSONS", desc:"At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.", link:"/tutorial"},
+        let tutorialsList = [{imgLink: "../../images/popular/1.jpg", duration:"3:15h", title:"How to become an UX Designer", shortDesc:"12 LESSONS", desc:"At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.", link:"/tutorial"},
 {imgLink: "../../images/popular/2.jpg", duration:"3:15h", title:"How to become an UX Designer", shortDesc:"12 LESSONS", desc:"At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.", link:"/tutorial"},
 {imgLink: "../../images/popular/3.jpg", duration:"3:15h", title:"How to become an UX Designer", shortDesc:"12 LESSONS", desc:"At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.", link:"/tutorial"},
 {imgLink: "../../images/popular/1.jpg", duration:"3:15h", title:"How to become an UX Designer", shortDesc:"12 LESSONS", desc:"At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.", link:"/tutorial"},
@@ -25,6 +26,9 @@ class CourseList extends React.Component {
 {imgLink: "../../images/popular/2.jpg", duration:"3:15h", title:"How to become an UX Designer", shortDesc:"12 LESSONS", desc:"At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.", link:"/tutorial"},
 {imgLink: "../../images/popular/3.jpg", duration:"3:15h", title:"How to become an UX Designer", shortDesc:"12 LESSONS", desc:"At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.", link:"/tutorial"}];
 
+const total = 5,
+    current = 2,
+    url = "/courses";
 
         return (
             <main>
@@ -34,13 +38,21 @@ class CourseList extends React.Component {
                 <div className="container courses-browse popular">
                     <Search></Search>
                     <Tutorials props={tutorialsList} columnNumbers={this.state.columnNumbers}></Tutorials>
-
+                    <Pagination total={total} current={current} url={url}></Pagination>
                 </div>
 
             </main>
         )
     }
 
+}
+
+CourseList.defaultProps={
+    columnNumbers: 3  
+};
+
+CourseList.propTypes ={
+    columnNumbers: PropTypes.number
 }
 
 export default CourseList;

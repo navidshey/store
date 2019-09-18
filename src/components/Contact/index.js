@@ -22,7 +22,6 @@ class contact extends React.Component {
     }
 
     handleSubmit(event) {
-        debugger;
         console.log("submit");
         this.setState({
             name: event.target["name"].value,

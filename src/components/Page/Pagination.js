@@ -1,33 +1,42 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import PropTypes from 'prop-types'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const Pagination = ({ total = 5, url, current }) => {
+const Pagination = ({ total, url, current }) => {
     return (
-        <div className="row text-center">
+        <div className="row text-center">  
             <div className="col-xs-12">
                 <div className="paginations">
-                    <Link className="prev" href="courses-3-col.html#">
-                        <i className="zmdi zmdi-chevron-left"></i>PREV
+                    <Link className="prev" to="/courses">
+                    <FontAwesomeIcon icon="chevron-left" size="1x" />
+                       PREV
                         </Link>
                     {
                         [...Array(total)].map((e, i) => {
-                            return(
-                            <Link to={url + "/" + i} key={i} className={current == i && "current"}>{i}</Link>
+                           return(
+                            <Link to={url + "/" + i} key={i} className={current == i && "current"}>{i+1}</Link>
                         )})
                         }
-                    {/* <a href="courses-3-col.html#">1</a>
-                    <a href="courses-3-col.html#">2</a>
-                    <a href="courses-3-col.html#">3</a>
-                    <a href="courses-3-col.html#">4</a>
-                    <a href="courses-3-col.html#">5</a>
-                    <a href="courses-3-col.html#">6</a> */}
-                    <Link className="next" href="courses-3-col.html#">NEXT
-                    <i className="zmdi zmdi-chevron-right"></i>
+                    <Link className="next" to="/courses">NEXT
+                    <FontAwesomeIcon icon="chevron-right" size="1x" />
                     </Link>
                 </div>
             </div>
         </div>
     );
+}
+   
+Pagination.defaultProps={
+    total: 5,
+    current: 2,
+    url: "/courses"
+};
+
+Pagination.propTypes ={
+    total: PropTypes.number,
+    current: PropTypes.number,
+    url: PropTypes.string
 }
 
 export default Pagination;
