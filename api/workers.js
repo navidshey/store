@@ -24,6 +24,8 @@ let generateWorkers = () => {
     
     for (let id = 0; id < 30; id++) {
         let title = faker.name.title();
+        let lessonNumber = faker.random.number(1,30);
+        let duration = faker.random.number(1,20);
         let description = faker.name.jobDescriptor()
         let tutor = faker.name.lastName;
 
@@ -31,7 +33,9 @@ let generateWorkers = () => {
             "id": id,
             "title": title,
             "description": description,
-            "tutor": tutor
+            "tutor": tutor,
+            "lessonNumber": lessonNumber,
+            "duration": duration
         });
     }
 
