@@ -28,7 +28,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "mock:api": "json-server --watch api/db.json --port 4000",
+    "mock:api": "json-server --watch api/db.json --port 4000",   
     "workers":"json-server api/workers.js --port 4000"
   },
   "keywords": [],

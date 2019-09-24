@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Header, Pagination } from '../Page'
 import Search from '../Page/Search';
 import Tutorials from '../Tutorials';
+import TutorialApi from '../../api/tutoralApi'
 
 
 class CourseList extends React.Component {
@@ -10,9 +11,18 @@ class CourseList extends React.Component {
     constructor(props, columnNumbers) {
         super(props);
         this.state = {
-            columnNumbers: columnNumbers ? columnNumbers :3  
+            columnNumbers: columnNumbers ? columnNumbers :3,
+            tutorials: []
         };
     }
+
+    componentDidMount() {
+        TutorialApi.getList()
+        .then(list=>this.setState({
+             tutorials: list
+          }));
+    };
+
 
     render() {
 
@@ -37,7 +47,7 @@ const total = 5,
 
                 <div className="container courses-browse popular">
                     <Search></Search>
-                    <Tutorials props={tutorialsList} columnNumbers={this.state.columnNumbers}></Tutorials>
+                    <Tutorials props={this.state.tutorials} columnNumbers={this.state.columnNumbers}></Tutorials>
                     <Pagination total={total} current={current} url={url}></Pagination>
                 </div>
 
