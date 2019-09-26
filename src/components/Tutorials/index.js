@@ -1,6 +1,6 @@
 import React from 'react'
-import general from '../../utils/general'
 import Box from './Box'
+import general from '../../utils/general'
 
 const Tutorials = ({ props, columnNumbers }) => {
     columnNumbers = 4;
@@ -11,10 +11,10 @@ const Tutorials = ({ props, columnNumbers }) => {
             {
                 general.chunk(props, columnNumbers).map((items, i)=>{
                     return(
-                        <div className="row tutorials" key={"row-"+i}>
+                        <div className="row tutorials" >
                             {items.map((item, index)=>{
                                 return(
-                                <Box item={item} index={index} colStyle={colStyle}></Box>
+                                <Box key={general.generateKey(index)} item={item} index={index} colStyle={colStyle}></Box>
                             )})}
                         </div>
                     )

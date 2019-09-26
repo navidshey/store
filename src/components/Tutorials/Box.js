@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import general from '../../utils/general'
 
 const Box = ({ item, index, colStyle}) => {
     return (
-        <div className={colStyle} key={index}>
+        <div className={colStyle} key={general.generateKey(index)}>
             <div className="tutorial">
                 <img src={item.imgLink} className="resp-img" alt="Tutorial" />
                 <div className="tutorial-details">

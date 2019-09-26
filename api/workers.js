@@ -8,6 +8,8 @@ let faker = require('faker');
 let generateWorkers = () => {
     let workers = [];
     let tutorials = { "list": [] };
+    let categoryTitles ={ "list":[] };
+    let teachersList ={ "list" : [] };
 
     for (let id = 0; id < 30; id++) {
         let firstName = faker.name.firstName();
@@ -25,7 +27,7 @@ let generateWorkers = () => {
 
 
     for (let id = 0; id < 30; id++) {
-        let imgLink = faker.image.people(100,100);
+        let imgLink = faker.image.people(200,200);
         let duration = faker.random.number(1, 20);
         let title = faker.name.title();
         let lessonNumber = faker.random.number(1, 30);
@@ -46,7 +48,24 @@ let generateWorkers = () => {
         });
 
     }
-    return { "workers": workers, "tutorials": tutorials }
+
+    for(let id=0; id<10; id++){
+        let category = "category"+id;
+        categoryTitles.list.push({
+            "value":id+1,
+            "title": category
+        });
+    }
+
+    for(let id=0; id<10; id++){
+        let teacher = faker.name.firstName() + " " + faker.name.lastName() ;
+        teachersList.list.push({
+            "value":id+1,
+            "title": teacher
+        });
+    }
+
+    return { "workers": workers, "tutorials": tutorials, "categoryTitles":categoryTitles, "teachersList" : teachersList }
 }
 
 

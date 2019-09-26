@@ -49,6 +49,10 @@ const general = {
         }
 
         return chunks;
+    },
+
+    generateKey: (pre) => {
+        return `${ pre }_${ new Date().getTime() }`;
     }
 
 }

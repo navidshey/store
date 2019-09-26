@@ -1,58 +1,63 @@
 import React from 'react'
+import CategoryApi from '../../api/categoryApi'
+import TeacherApi from '../../api/teacherApi'
+import SimpleList from '../Elements/CompoBox/SimpleList'
 
-const Search = () => {
-    let categories = [{ value: "1", title: "Category 1" }, { value: "2", title: "Category 2" }, { value: "3", title: "Category 3" }];
-    let teachers = [{ value: "1", title: "Teacher 1" }, { value: "2", title: "Teacher 2" }, { value: "3", title: "Teacher 3" }];
-    let sortBy = [{ value: "1", title: "Sort by 1" }, { value: "2", title: "Sort by 2" }, { value: "3", title: "Sort by 3" }];
 
-    return (
+class Search extends React.Component {
 
-        <div className="row toolbar">
-            <div className="col-md-4 col-sm-6 col-xs-12 select-categories">
-                <select className="jquery-select">
-                    <option>choose a category</option>
-                    {
-                        categories.map(category => {
-                            return (
-                                <option value={categories.value}>{category.title}</option>
-                            )
-                        })
-                    }
-                </select>
-            </div>
-            <div className="col-md-4 col-sm-6 col-xs-12 select-numofvids">
-                <select className="jquery-select">
-                    <option>choose a teacher</option>
-                    {
-                        teachers.map(teacher => {
-                            return (
-                                <option value={teacher.value}>{teacher.title}</option>
-                            )
-                        })
-                    }
-                </select>
-            </div>
-            <div className="col-md-4 col-sm-6 col-xs-12 select-name">
-                <select className="jquery-select">
-                    <option>sort by</option>
-                    {
-                        sortBy.map(sort => {
-                            return (
-                                <option value={sort.value}>{sort.title}</option>
-                            )
-                        })
-                    }
-                </select>
-            </div>
-            <div className="col-sm-6 col-xs-12 text-keywords">
-                <input className="keywords" name="keywords" type="text" placeholder="keywords" />
-            </div>
-            <div className="col-sm-6 col-xs-12 search-button">
-                <button className="search-teachers">SEARCH</button>
-            </div>
-        </div>
+    constructor(props) {
+        super(props);
+        this.state = {
+            categories: [],
+            teachers: [],
+            keyword: "",
+            category: null,
+            teacher: null
+        };
+        this.handleSearchCourses = this.handleSearchCourses.bind(this);
+    }
 
-    );
+    componentDidMount() {
+        CategoryApi.getSearchItem()
+            .then(list => this.setState({
+                categories: list
+            }));
+        TeacherApi.getSearchItem()
+            .then(list => this.setState({
+                teachers: list
+            }));
+    };
+
+    handleSearchCourses(event){
+        this.setState({
+            category: event.target["category"].value,
+            teacher: event.target["teacher"].value
+        })
+        //call search service
+        event.preventDefault();
+    };
+
+    render() {
+        return (
+            <form onSubmit={this.handleSearchCourses}>
+                <div className="row toolbar">
+                    <div className="col-md-4 col-sm-6 col-xs-12 select-categories">
+                        <SimpleList name="category" title="Choose a category" list={this.state.categories} ></SimpleList>
+                    </div>
+                    <div className="col-md-4 col-sm-6 col-xs-12 select-numofvids">
+                        <SimpleList name="teacher" title="Choose a teacher" list={this.state.teachers} ></SimpleList>
+                    </div>
+                    <div className="col-sm-6 col-xs-12 text-keywords">
+                        <input className="keywords" name="keywords" type="text" placeholder="keywords" />
+                    </div>
+                    <div className="col-sm-6 col-xs-12 search-button">
+                        <button className="search-teachers" type="submit">SEARCH</button>
+                    </div>
+                </div>
+            </form>
+        );
+    }
 }
 
 export default Search;
