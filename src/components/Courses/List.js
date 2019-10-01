@@ -11,34 +11,32 @@ class CourseList extends React.Component {
     constructor(props, columnNumbers) {
         super(props);
         this.state = {
+            url: "tutorials",
             columnNumbers: columnNumbers ? columnNumbers :3,
-            tutorials: []
+            tutorials: [],
+            isloading: true
         };
+        this.getList = this.getList.bind(this);
     }
 
     componentDidMount() {
-        TutorialApi.getList()
-        .then(list=>this.setState({
-             tutorials: list
-          }));
+        this.getList(1);   
     };
 
+    getList(from){
+        this.setState({
+            isloading: true
+        })
+        TutorialApi.getList(from)
+        .then(list=>this.setState({
+             tutorials: list.data,
+             total: list.total,
+             from: from,
+             isloading: false
+          })); 
+    };
 
     render() {
-
-        let tutorialsList = [{imgLink: "../../images/popular/1.jpg", duration:"3:15h", title:"How to become an UX Designer", shortDesc:"12 LESSONS", desc:"At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.", link:"/tutorial"},
-{imgLink: "../../images/popular/2.jpg", duration:"3:15h", title:"How to become an UX Designer", shortDesc:"12 LESSONS", desc:"At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.", link:"/tutorial"},
-{imgLink: "../../images/popular/3.jpg", duration:"3:15h", title:"How to become an UX Designer", shortDesc:"12 LESSONS", desc:"At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.", link:"/tutorial"},
-{imgLink: "../../images/popular/1.jpg", duration:"3:15h", title:"How to become an UX Designer", shortDesc:"12 LESSONS", desc:"At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.", link:"/tutorial"},
-{imgLink: "../../images/popular/2.jpg", duration:"3:15h", title:"How to become an UX Designer", shortDesc:"12 LESSONS", desc:"At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.", link:"/tutorial"},
-{imgLink: "../../images/popular/3.jpg", duration:"3:15h", title:"How to become an UX Designer", shortDesc:"12 LESSONS", desc:"At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.", link:"/tutorial"},
-{imgLink: "../../images/popular/1.jpg", duration:"3:15h", title:"How to become an UX Designer", shortDesc:"12 LESSONS", desc:"At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.", link:"/tutorial"},
-{imgLink: "../../images/popular/2.jpg", duration:"3:15h", title:"How to become an UX Designer", shortDesc:"12 LESSONS", desc:"At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.", link:"/tutorial"},
-{imgLink: "../../images/popular/3.jpg", duration:"3:15h", title:"How to become an UX Designer", shortDesc:"12 LESSONS", desc:"At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est.", link:"/tutorial"}];
-
-const total = 5,
-    current = 2,
-    url = "/courses";
 
         return (
             <main>
@@ -47,8 +45,9 @@ const total = 5,
 
                 <div className="container courses-browse popular">
                     <Search></Search>
-                    <Tutorials props={this.state.tutorials} columnNumbers={this.state.columnNumbers}></Tutorials>
-                    <Pagination total={total} current={current} url={url}></Pagination>
+                    { !this.state.isloading && <Tutorials props={this.state.tutorials} columnNumbers={this.state.columnNumbers}></Tutorials>}
+                    { this.state.isloading && "loading .............................................................." }
+                    <Pagination total={this.state.total} current={this.state.from} url={this.state.url} callback={this.getList}></Pagination>
                 </div>
 
             </main>

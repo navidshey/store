@@ -6,7 +6,6 @@ const Tutorials = ({ props, columnNumbers }) => {
     columnNumbers = 4;
     let colStyle = general.getColumnsStyle(columnNumbers);
     return (
-        
         <>  
             {
                 general.chunk(props, columnNumbers).map((items, i)=>{

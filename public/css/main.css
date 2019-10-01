@@ -1679,6 +1679,19 @@ h3 + p {
 	transition: all 0.3s ease;
 }
 
+.paginations div{
+	line-height: 40px;
+	width: 40px;
+	display: inline-block;
+	margin-right: 14px;
+	border-radius: 1px;
+	font-family: "OpenSans", sans-serif;
+	font-size: 11px;
+	color: #202020;
+	transition: all 0.3s ease;
+	cursor:pointer;
+}
+
 .paginations .current{
 	background-color: #18c967;
     color: #fff;
@@ -1705,6 +1718,13 @@ h3 + p {
 }
 
 .paginations a:hover{
+	background-color: #18c967;
+	color: #fff;
+	transition: all 0.3s ease;
+	text-decoration: none;
+}
+
+.paginations div:hover{
 	background-color: #18c967;
 	color: #fff;
 	transition: all 0.3s ease;

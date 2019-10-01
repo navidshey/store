@@ -8,6 +8,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.10.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
     "faker": "^4.1.0",
+    "json-server": "^0.15.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-route": "^1.0.3",
@@ -28,8 +29,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "mock:api": "json-server --watch api/db.json --port 4000",   
-    "workers":"json-server api/workers.js --port 4000"
+    "mock:api": "json-server --watch api/db.json --port 4000",
+    "workers": "json-server api/workers.js --port 4000"
   },
   "keywords": [],
   "author": "",
