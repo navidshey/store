@@ -37,7 +37,6 @@ class CourseList extends React.Component {
              from: from,
              isloading: false
           })); 
-          debugger;
     };
 
     render() {
@@ -51,7 +50,7 @@ class CourseList extends React.Component {
                     <Search></Search>
                     { !this.state.isloading && <Tutorials props={this.state.tutorials} columnNumbers={this.state.columnNumbers}></Tutorials>}
                     { this.state.isloading && "loading .............................................................." }
-                    <Pagination total={this.state.total} current={this.state.from} url={this.state.url} callback={this.getList}></Pagination>
+                    {this.state.total && <Pagination total={this.state.total} current={this.state.from} url={this.state.url} callback={this.getList}></Pagination>}
                 </div>
 
             </main>

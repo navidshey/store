@@ -9,11 +9,13 @@ class Pagination extends React.Component {
         super(props);
         this.state = {
             total: props.total,
-            url: props.url,
             current: (!props.current || props.current == 0) ? 0 : props.current,
             pageNumbers: []
         }
-        debugger;
+    }
+
+    componentDidMount() {
+        this.calculatePageNumbers(this.state.total);
     }
 
     handlePageClick = (i) => {
@@ -24,9 +26,13 @@ class Pagination extends React.Component {
     }
 
     calculatePageNumbers = (total) => {
-        for (let i = 1; i <= Math.ceil(this.state.meta.total / this.state.meta.per_page); i++) {
-            this.state.pageNumbers.push(i);
+        let pagenum = [];
+        for (let i = 1; i <= Math.ceil(total / 12); i++) {
+            pagenum.push(i);
         }
+        this.setState({
+            pageNumbers: pagenum
+        })
     }
 
     render() {
@@ -34,25 +40,17 @@ class Pagination extends React.Component {
             <div className="row text-center">
                 <div className="col-xs-12">
                     <div className="paginations">
-                        {/* <Link className="prev" to="/courses">
-                            <FontAwesomeIcon icon="chevron-left" size="1x" />
-                            PREV
-                        </Link> */}
                         <div onClick={() => this.handlePageClick(this.state.current - 1)} key="prev-key">
                             <FontAwesomeIcon icon="chevron-left" size="1x" />
                             PREV
                             </div>
-                        {
-                            this.state.pageNumbers.map((number, i) => {
-                                return (
-                                    // <Link to={this.state.url + "/" + i+1} onClick={()=> this.handlePageClick(i)} key={i} className={this.state.current == i ? "current" : ""}>{i + 1}</Link>
-                                    <div onClick={() => this.handlePageClick(number)} key={number} className={this.state.current == number ? "current" : ""}>{i}</div>
+                       {
+                            this.state.pageNumbers.map((number) => {
+                                return (  
+                                    <div onClick={() => this.handlePageClick(number)} key={number} className={this.state.current == number ? "current" : ""}>{number}</div>
                                 )
                             })
                         }
-                        {/* <Link className="next" to="/courses">NEXT
-                    <FontAwesomeIcon icon="chevron-right" size="1x" />
-                        </Link> */}
                         <div onClick={() => this.handlePageClick(this.state.current + 1)} key="next-key">
                             NEXT
                     <FontAwesomeIcon icon="chevron-right" size="1x" />
@@ -64,16 +62,14 @@ class Pagination extends React.Component {
     }
 }
 
-// Pagination.defaultProps = {
-//     total: 5,
-//     current: 0,
-//     url: "/courses"
-// };
+Pagination.defaultProps = {
+    total: 30,
+    current: 1
+};
 
 Pagination.propTypes = {
     total: PropTypes.number,
     current: PropTypes.number,
-    url: PropTypes.string,
     callback: PropTypes.func
 }
 
