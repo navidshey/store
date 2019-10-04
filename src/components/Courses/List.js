@@ -14,7 +14,10 @@ class CourseList extends React.Component {
             url: "tutorials",
             columnNumbers: columnNumbers ? columnNumbers :3,
             tutorials: [],
-            isloading: true
+            isloading: true,
+            total: null,
+            current: null,
+            url: ""
         };
         this.getList = this.getList.bind(this);
     }
@@ -34,6 +37,7 @@ class CourseList extends React.Component {
              from: from,
              isloading: false
           })); 
+          debugger;
     };
 
     render() {
