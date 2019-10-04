@@ -44,11 +44,14 @@ class Pagination extends React.Component {
                             <FontAwesomeIcon icon="chevron-left" size="1x" />
                             PREV
                             </div>
-                       {
+                        {
                             this.state.pageNumbers.map((number) => {
-                                return (  
-                                    <div onClick={() => this.handlePageClick(number)} key={number} className={this.state.current == number ? "current" : ""}>{number}</div>
-                                )
+                                if (number == 1 || number == this.state.total || (number >= this.state.current - 2 && number <= this.state.current + 4)) {
+  
+                                    return (
+                                        <div onClick={() => this.handlePageClick(number)} key={number} className={this.state.current == number ? "current" : ""}>{number}</div>
+                                    )
+                                }
                             })
                         }
                         <div onClick={() => this.handlePageClick(this.state.current + 1)} key="next-key">
