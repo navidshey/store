@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -9,7 +8,7 @@ class Pagination extends React.Component {
         super(props);
         this.state = {
             total: props.total,
-            current: (!props.current || props.current == 0) ? 0 : props.current,
+            current: (!props.current || props.current === 0) ? 0 : props.current,
             pageNumbers: []
         }
     }
@@ -46,10 +45,10 @@ class Pagination extends React.Component {
                             </div>
                         {
                             this.state.pageNumbers.map((number) => {
-                                if (number == 1 || number == this.state.total || (number >= this.state.current - 2 && number <= this.state.current + 4)) {
+                                if (number === 1 || number === this.state.total || (number >= this.state.current - 2 && number <= this.state.current + 4)) {
   
                                     return (
-                                        <div onClick={() => this.handlePageClick(number)} key={number} className={this.state.current == number ? "current" : ""}>{number}</div>
+                                        <div onClick={() => this.handlePageClick(number)} key={number} className={this.state.current === number ? "current" : ""}>{number}</div>
                                     )
                                 }
                             })

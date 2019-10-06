@@ -11,7 +11,6 @@ class CourseList extends React.Component {
     constructor(props, columnNumbers) {
         super(props);
         this.state = {
-            url: "tutorials",
             columnNumbers: columnNumbers ? columnNumbers :3,
             tutorials: [],
             isloading: true,

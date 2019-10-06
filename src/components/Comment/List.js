@@ -14,7 +14,7 @@ class Comment extends React.Component {
     componentDidMount() {
         //get comment by courseid
         // this.setState={
-// list
+        // list
         // }
     }
 
@@ -25,17 +25,19 @@ class Comment extends React.Component {
 
                 {
                     this.state.list.map((item) => {
-                        <div className="comment clearfix">
-                            <img src={item.avatar} alt="Avatar" className="pull-left" />
-                            <Link to="course-single.html#">{item.name}</Link>
+                        return (
+                            <div className="comment clearfix">
+                                <img src={item.avatar} alt="Avatar" className="pull-left" />
+                                <Link to="course-single.html#">{item.name}</Link>
 
-                            <span className="postedon">{item.date}></span>
+                                <span className="postedon">{item.date}></span>
 
-                            <p className="abs">
-                                {item.description}
-                            </p>
-                            <Link href="course-single.html#" className="pull-right greybutton">REPLY</Link>
-                        </div>
+                                <p className="abs">
+                                    {item.description}
+                                </p>
+                                <Link href="course-single.html#" className="pull-right greybutton">REPLY</Link>
+                            </div>
+                        )
                     })
                 }
 

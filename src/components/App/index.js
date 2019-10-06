@@ -8,6 +8,7 @@ import Header from '../Header'
 import Footer from '../Footer'
 import Contact from '../Contact'
 import CourseList from '../Courses/List';
+import Detail from '../Courses/Detail';
 
 library.add(faShoppingBag, faSearch, faChevronRight, faChevronLeft)
 
@@ -18,6 +19,7 @@ class App extends React.Component {
         <Header></Header>
         <Switch>
           <Route path="/contact" component={Contact} />
+          <Route path="/detail/:id" component={Detail} />
             <Route exact path="/courses" component={CourseList} />
             <Route exact path="/" component={Home} />
             {/* <Route path="/article/:id" component={Article} />

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import general from '../../utils/general'
 
 const Box = ({ item, index, colStyle}) => {
+    let urlLink = `/detail/${item.id}`;
     return (
         <div className={colStyle} key={general.generateKey(index)}>
             <div className="tutorial">
@@ -12,7 +13,7 @@ const Box = ({ item, index, colStyle}) => {
                     <p><span className="lessons">
                         <i className="zmdi zmdi-assignment"></i>{item.shortDesc}</span><span className="duration"><i className="zmdi zmdi-time"></i>{item.duration}</span></p>
                     <p className="abs">{item.desc}</p>
-                    <Link to={item.link} className="greybutton">VIEW COURSE</Link>
+                    <Link to={urlLink} className="greybutton">VIEW COURSE</Link>
                 </div>
             </div>
         </div>

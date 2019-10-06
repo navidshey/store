@@ -1,5 +1,7 @@
 import React from 'react'
 import { Header } from '../Page'
+import TutorialApi from '../../api/tutoralApi'
+import Comment from '../Comment'
 import general from '../../utils/general'
 
 class Detail extends React.Component {
@@ -7,20 +9,28 @@ class Detail extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            id: "1",
-            imgUrl: "assets/images/preview.jpg",
-            title: "Adobe Photoshop CC for Professionals",
-            lessonNumber: 20,
-            duration: "3:15",
-            viewed: "1000",
-            courseDetails: "  Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.",
-
-
+            id: null,
+            imgUrl: "",
+            title: "",
+            lessonNumber: null,
+            duration: "",
+            viewed: "",
+            courseDetails: ""
         }
     }
 
     componentDidMount() {
-
+        TutorialApi.getById(this.props.match.params.id)
+        .then(item=>
+            this.setState({
+            id: this.props.match.params.id,
+            imgUrl: item.imgUrl,
+            title: item.title,
+            lessonNumber: item.lessonNumber,
+            duration: item.duration,
+            viewed: item.viewed,
+            courseDetails: item.courseDetails
+          })); 
     }
 
     render() {
@@ -184,7 +194,7 @@ class Detail extends React.Component {
                                 </li>
                             </ul>
 
-                            <Comment courseId={this.state.id}></Comment>
+                            {/* <Comment courseId={this.state.id}></Comment> */}
 
                         </div>
                         <div className="col-md-3">

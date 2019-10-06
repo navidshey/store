@@ -16,6 +16,16 @@ let generateWorkers = () => {
     };
     let categoryTitles = { "list": [] };
     let teachersList = { "list": [] };
+    let tutorial = {
+        id: 0,
+        imgUrl: "",
+        title: "",
+        lessonNumber: 20,
+        duration: "3:15",
+        viewed: "1000",
+        courseDetails: null
+    };
+
 
     for (let id = 0; id < 24; id++) {
         let firstName = faker.name.firstName();
@@ -69,7 +79,17 @@ let generateWorkers = () => {
         });
     }
 
-    return { "workers": workers, "tutorials": tutorials, "categoryTitles": categoryTitles, "teachersList": teachersList }
+    tutorial = {
+        id: 1,
+        imgUrl: faker.image.people(870,400),
+        title: faker.name.firstName()+" "+faker.name.lastName(),
+        lessonNumber: faker.random.number(1,30),
+        duration: faker.random.number(1,20)+":"+faker.random.number(1,60)+"h",
+        viewed: faker.random.number(100,1000),
+        courseDetails: faker.lorem.paragraph()
+    }
+
+        return { "workers": workers, "tutorials": tutorials, "categoryTitles": categoryTitles, "teachersList": teachersList, "tutorial":tutorial }
 }
 
 
