@@ -1,7 +1,7 @@
 import React from 'react'
 import { Header } from '../Page'
 import TutorialApi from '../../api/tutoralApi'
-import Comment from '../Comment'
+import List from '../Comment/List'
 import general from '../../utils/general'
 
 class Detail extends React.Component {
@@ -20,6 +20,7 @@ class Detail extends React.Component {
     }
 
     componentDidMount() {
+        general.changeIdByElement("body", "course-single");
         TutorialApi.getById(this.props.match.params.id)
         .then(item=>
             this.setState({
@@ -32,6 +33,7 @@ class Detail extends React.Component {
             courseDetails: item.courseDetails
           })); 
     }
+
 
     render() {
         return (
@@ -194,7 +196,7 @@ class Detail extends React.Component {
                                 </li>
                             </ul>
 
-                            {/* <Comment courseId={this.state.id}></Comment> */}
+                            <List courseId={this.state.id}></List>
 
                         </div>
                         <div className="col-md-3">

@@ -25,7 +25,7 @@ let generateWorkers = () => {
         viewed: "1000",
         courseDetails: null
     };
-
+    let commentList = { "list":[]};
 
     for (let id = 0; id < 24; id++) {
         let firstName = faker.name.firstName();
@@ -89,7 +89,22 @@ let generateWorkers = () => {
         courseDetails: faker.lorem.paragraph()
     }
 
-        return { "workers": workers, "tutorials": tutorials, "categoryTitles": categoryTitles, "teachersList": teachersList, "tutorial":tutorial }
+    for (let id = 0; id < 5; id++) {
+        let avatar = faker.image.people(60, 60);
+        let name = faker.name.title();
+        let date = "2019/01/02";
+        let description = faker.lorem.paragraph();
+
+        commentList.list.push({
+            "avatar": avatar,
+            "name": name,
+            "date": date,
+            "description": description
+        });
+
+    }
+
+        return { "workers": workers, "tutorials": tutorials, "categoryTitles": categoryTitles, "teachersList": teachersList, "tutorial":tutorial , "commentList": commentList  }
 }
 
 
