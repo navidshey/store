@@ -3,6 +3,7 @@ import { Header } from '../Page'
 import TutorialApi from '../../api/tutoralApi'
 import {List} from '../Comment'
 import general from '../../utils/general'
+import Content from './Content'
 
 class Detail extends React.Component {
 
@@ -69,7 +70,8 @@ class Detail extends React.Component {
                             </ul> */}
 
                             <h4>COURSE CONTENT</h4>
-                            <ul className="course-accordion">
+                            <Content id={1} ></Content>
+                            {/* <ul className="course-accordion">
                                 <li className="accordion-option opened">
                                     <div className="option-title">Section #1: Tools in Photoshop <span>(4 videos)</span></div>
                                     <div className="option-wrapper">
@@ -194,7 +196,7 @@ class Detail extends React.Component {
                                         </ul>
                                     </div>
                                 </li>
-                            </ul>
+                            </ul> */}
 
                             <List courseId={this.state.id}></List>
 

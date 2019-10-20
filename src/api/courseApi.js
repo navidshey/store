@@ -1,9 +1,9 @@
 const courseApi = {
- loadCourseList : ()=> {
-        return fetch('https://conduit.productionready.io/api/articles/' + this.props.match.params.id)
-            .then(response => response.json())
-            .then(json => json.article)
-}
+    getTitles : (id)=>{
+        return fetch(`http://localhost:4000/courseContent?id=${id}`)
+        .then(response => response.json())
+        .then(json => json)
+    }
 }
 
 export default courseApi;

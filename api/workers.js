@@ -14,6 +14,9 @@ let generateWorkers = () => {
             from: 1
         }
     };
+    let courseContent = {
+        "list":[]
+    }
     let categoryTitles = { "list": [] };
     let teachersList = { "list": [] };
     let tutorial = {
@@ -104,7 +107,27 @@ let generateWorkers = () => {
 
     }
 
-        return { "workers": workers, "tutorials": tutorials, "categoryTitles": categoryTitles, "teachersList": teachersList, "tutorial":tutorial , "commentList": commentList  }
+    for(let i=0; i<4; i++){
+        let sublist=[];
+        for (let id = 0; id < 3; id++) {
+            sublist.push({
+                "id": id,
+                "hour": faker.random.number(1,12) + " h",
+                "subTitle": faker.name.title(),
+                "link": "./tutorial"
+            });
+    
+        }
+        courseContent.list.push({
+            "title": faker.name.title(),
+            subList:sublist
+        })
+    }
+
+    
+
+        return { "workers": workers, "tutorials": tutorials, "categoryTitles": categoryTitles, "teachersList": teachersList, 
+                 "tutorial":tutorial , "commentList": commentList, "courseContent":courseContent  }
 }
 
 
