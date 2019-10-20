@@ -1,7 +1,7 @@
 import React from 'react'
 import { Header } from '../Page'
 import TutorialApi from '../../api/tutoralApi'
-import List from '../Comment/List'
+import {List} from '../Comment'
 import general from '../../utils/general'
 
 class Detail extends React.Component {

@@ -89,7 +89,7 @@ let generateWorkers = () => {
         courseDetails: faker.lorem.paragraph()
     }
 
-    for (let id = 0; id < 5; id++) {
+    for (let id = 0; id < 3; id++) {
         let avatar = faker.image.people(60, 60);
         let name = faker.name.title();
         let date = "2019/01/02";

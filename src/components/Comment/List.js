@@ -14,8 +14,6 @@ class List extends React.Component {
     }
 
     componentDidMount() {
-        //get comment by courseid
-        debugger; 
         CommentApi.getCommentList(this.state.courseId)
         .then(list=>this.setState({
              comments: list
