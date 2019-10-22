@@ -1,27 +1,28 @@
+/* eslint-disable no-unused-vars */
 import React from 'react'
 import { Link } from 'react-router-dom'
 
 const Navbar = () => {
-    return (
-        <>
-            <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                <i className="zmdi zmdi-menu zmdi-hc-lg"></i>
-            </button>
+  return (
+    <>
+      <button type="button" className="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <i className="zmdi zmdi-menu zmdi-hc-lg"></i>
+      </button>
 
-            <nav className="collapse navbar-collapse" id="myNavbar">
-                <ul>
+      <nav className="collapse navbar-collapse" id="myNavbar">
+        <ul>
 
-                    <li className="active">
-                        <Link to="/">Home</Link>
-                        {/* <ul className="submenu-list submenu">
+          <li className="active">
+            <Link to="/">Home</Link>
+            {/* <ul className="submenu-list submenu">
                             <li><Link to="index1_2.html">Homepage 1</Link></li>
                             <li><Link to="index2.html">Homepage 2</Link></li>
                             <li><Link to="index3.html">Homepage 3</Link></li>
                         </ul> */}
-                    </li>
-                    <li>
-                        <Link to="/courses">Online Courses</Link>
-                        {/* <ul className="submenu clearfix">
+          </li>
+          <li>
+            <Link to="/courses">Online Courses</Link>
+            {/* <ul className="submenu clearfix">
                             <li>
                                 <ul className="sub-column">
                                     <li><Link to="index3.html#">All Courses (817)</Link></li>
@@ -53,10 +54,10 @@ const Navbar = () => {
                                 </ul>
                             </li>
                         </ul> */}
-                    </li>
-                    <li>
-                        <Link to="/categories">Categories</Link>
-                        {/* <ul className="submenu submenu-list">
+          </li>
+          <li>
+            <Link to="/categories">Categories</Link>
+            {/* <ul className="submenu submenu-list">
                             <li><Link to="categories.html">Categories</Link></li>
                             <li><Link to="courses-3-col.html">Courses 3 column</Link></li>
                             <li><Link to="courses-4-col.html">Courses 4 column</Link></li>
@@ -66,8 +67,8 @@ const Navbar = () => {
                             <li><Link to="courses-list-sidebar.html">Courses List Sidebar</Link></li>
                             <li><Link to="courses-sidebar.html">Courses Sidebar</Link></li>
                         </ul> */}
-                    </li>
-                    {/* <li>
+          </li>
+          {/* <li>
                         <Link to="index3.html#">Support</Link>
                         <ul className="submenu submenu-list">
                             <li><Link to="how-it-works.html">How it works</Link></li>
@@ -80,12 +81,12 @@ const Navbar = () => {
                             <li><Link to="blog2.html">Blog 2</Link></li>
                         </ul>
                     </li> */}
-                    <li><Link to="/contact">Contact</Link></li>
+          <li><Link to="/contact">Contact</Link></li>
 
-                </ul>
-            </nav>
-        </>
-    );
+        </ul>
+      </nav>
+    </>
+  )
 }
 
-export default Navbar;
+export default Navbar
