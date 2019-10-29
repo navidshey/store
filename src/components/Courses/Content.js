@@ -16,13 +16,18 @@ class Content extends React.Component {
     this.handleRowClicked = this.handleRowClicked.bind(this)
   }
 
-  componentDidMount () {
-    courseApi.getTitles(1)
-      .then(item =>
-        this.setState({
-          list: item.list
-        })
-      )
+  async componentDidMount () {
+    const titles = await courseApi.getTitles(1)
+    this.setState({
+      list: titles.list
+    })
+
+    // courseApi.getTitles(1)
+    // .then(item =>
+    //   this.setState({
+    //     list: item.list
+    //   })
+    // )
   }
 
   handleRowClicked (index) {
@@ -40,15 +45,16 @@ class Content extends React.Component {
           {
             this.state.list.map((item, index) => {
               return (
-                <li className={this.state.openedIndex == index ? 'accordion-option opened' : 'accordion-option'}
+                <li key={index} className={this.state.openedIndex === index ? 'accordion-option opened' : 'accordion-option'}
                   onClick={() => this.handleRowClicked(index)}>
                   <div className="option-title">Section #1: {item.title} <span>({item.subList.length} videos)</span></div>
                   <div className="option-wrapper">
                     <ul className="option-items">
                       {
-                        item.subList.map((subItem) => {
+                        item.subList.map((subItem, subIndex) => {
+                          const subKey = 'sub-' + subIndex
                           return (
-                            <li className="option-item" >
+                            <li key={subKey} className="option-item" >
                               <div className="pull-right">
                                 <span className="duration">{subItem.hour}</span>
                                 <Link to={subItem.link}><i className="zmdi zmdi-star"></i></Link>

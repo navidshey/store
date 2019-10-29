@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 const SimpleList = ({ title, list, name }) => {
   return (
@@ -13,5 +14,12 @@ const SimpleList = ({ title, list, name }) => {
       }
     </select>
   )
+}
+
+SimpleList.propTypes = {
+  title: PropTypes.string,
+  name: PropTypes.string,
+  list: PropTypes.object
+
 }
 export default SimpleList

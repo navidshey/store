@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the simplelist renderers as expected 1`] = `
+<select
+  className="jquery-select"
+  name="test_list"
+>
+  <option>
+    test list
+  </option>
+  <option
+    value="1"
+  >
+    title 11 
+  </option>
+  <option
+    value="2"
+  >
+    title 22
+  </option>
+</select>
+`;

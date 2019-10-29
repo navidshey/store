@@ -7,6 +7,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.22",
     "@fortawesome/free-solid-svg-icons": "^5.10.2",
     "@fortawesome/react-fontawesome": "^0.1.4",
+    "eslint-plugin-jest": "^22.21.0",
     "faker": "^4.1.0",
     "json-server": "^0.15.1",
     "react": "^16.9.0",
@@ -14,15 +15,18 @@
     "react-route": "^1.0.3",
     "react-router-dom": "^4.3.1",
     "react-router-hash-history": "^0.2.3",
-    "react-scripts": "^3.1.1"
+    "react-scripts": "^3.1.1",
+    "react-test-renderer": "^16.11.0"
   },
   "devDependencies": {
     "@babel/core": "^7.5.5",
-    "@babel/preset-env": "^7.5.5",
+    "@babel/plugin-transform-runtime": "^7.6.2",
+    "@babel/preset-env": "^7.6.3",
     "@babel/preset-react": "^7.0.0",
+    "@babel/runtime": "^7.6.3",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
-    "eslint": "^6.5.1",
+    "eslint": "^6.6.0",
     "eslint-config-standard": "^14.1.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-node": "^10.0.0",
@@ -34,7 +38,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "jest",
     "eject": "react-scripts eject",
     "mock:api": "json-server --watch api/db.json --port 4000",
     "workers": "json-server api/workers.js --port 4000"
