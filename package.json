@@ -9,6 +9,7 @@
     "@fortawesome/react-fontawesome": "^0.1.4",
     "eslint-plugin-jest": "^22.21.0",
     "faker": "^4.1.0",
+    "jest": "^24.9.0",
     "json-server": "^0.15.1",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
