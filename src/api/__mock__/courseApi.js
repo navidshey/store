@@ -7,7 +7,7 @@ const courses = {
 }
 
 const courseApi = {
-  getTitles: (id) => {
+  getTitles: function (id) {
     console.warn('using mock!')
     return new Promise((resolve, reject) => {
       process.nextTick(() => {
