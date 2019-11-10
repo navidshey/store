@@ -1,17 +1,22 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import { withRouter } from 'react-router'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faShoppingBag, faSearch, faChevronRight, faChevronLeft } from '@fortawesome/free-solid-svg-icons'
-import Home from '../Home'
-import Header from '../Header'
-import Footer from '../Footer'
-import Contact from '../Contact'
-import CourseList from '../Courses/List'
-import Detail from '../Courses/Detail'
+import React from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { withRouter } from 'react-router';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import {
+  faShoppingBag,
+  faSearch,
+  faChevronRight,
+  faChevronLeft
+} from '@fortawesome/free-solid-svg-icons';
+import Home from '../Home';
+import Header from '../Header';
+import Footer from '../Footer';
+import Contact from '../Contact';
+import CourseList from '../Courses/List';
+import Detail from '../Courses/Detail';
 
-library.add(faShoppingBag, faSearch, faChevronRight, faChevronLeft)
+library.add(faShoppingBag, faSearch, faChevronRight, faChevronLeft);
 
 const App = () => {
   return (
@@ -27,7 +32,7 @@ const App = () => {
       </Switch>
       <Footer></Footer>
     </>
-  )
-}
+  );
+};
 
-export default withRouter(App)
+export default withRouter(App);
