@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Tutorials from '../Tutorials'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import Tutorials from '../Tutorials';
+import PropTypes from 'prop-types';
 
 const PopularTutorials = ({ props }) => {
   return (
-
     <div className="container popular">
       <div className="row">
         <div className="col-sm-12 text-center">
@@ -20,6 +20,11 @@ const PopularTutorials = ({ props }) => {
 
       <Tutorials props={props} columnNumbers={3}></Tutorials>
     </div>
-  )
-}
-export default PopularTutorials
+  );
+};
+
+PopularTutorials.prototype = {
+  props: PropTypes.object
+};
+
+export default PopularTutorials;

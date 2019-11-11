@@ -45,4 +45,5 @@ it('should display item data', () => {
   expect(container.querySelector('.lessons').textContent).toBe('shortDesc');
   expect(container.querySelector('.duration').textContent).toBe('1');
   expect(container.querySelector('a').getAttribute('href')).toBe('/detail/1');
+  expect(container.querySelector('.col-xs-3')).toBeTruthy();
 });
