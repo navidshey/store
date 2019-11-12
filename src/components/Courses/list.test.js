@@ -3,8 +3,9 @@ import { render, unmountComponentAtNode } from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import { BrowserRouter } from 'react-router-dom';
 
-import List from './../Comment/List';
+import List from './../Courses/List';
 import Tutorials from './../Tutorials/index';
+import { Pagination } from './../Page';
 
 jest.mock('./../Tutorials/index', () => {
   return function DummyTutorials (props) {
@@ -15,6 +16,9 @@ jest.mock('./../Tutorials/index', () => {
       </>
     );
   };
+});
+jest.mock('./../Page', () => {
+  return <div>Pagination</div>;
 });
 
 let container = null;
@@ -151,16 +155,17 @@ afterEach(() => {
 });
 
 it('list should get data', () => {
-  //   jest.spyOn(global, 'fetch').mockImplementation(() =>
-  //     Promise.resolve({
-  //       json: () => Promise.resolve(data)
-  //     })
-  //   );
-  global.getList = jest.fn().mockImplementation(() => {
+  jest.spyOn(List, 'getList').mockImplementation(() =>
     Promise.resolve({
       json: () => Promise.resolve(data)
-    });
-  });
+    })
+  );
+
+  // global.getList = jest.fn().mockImplementation(() => {
+  //   Promise.resolve({
+  //     json: () => Promise.resolve(data)
+  //   });
+  // });
 
   act(() => {
     render(
